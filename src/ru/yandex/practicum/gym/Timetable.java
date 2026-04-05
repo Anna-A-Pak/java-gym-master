@@ -38,13 +38,13 @@ public class Timetable {
         return timetable.get(dayOfWeek).get(timeOfDay);
     }
 
-    public List <Map.Entry<Coach, Integer>> getCountByCoaches() {
+    public List<Map.Entry<Coach, Integer>> getCountByCoaches() {
         Map<Coach, Integer> unSortCoach = new LinkedHashMap<>();
         for (Map.Entry<DayOfWeek, TreeMap<TimeOfDay, ArrayList<TrainingSession>>> entry : timetable.entrySet()) {
             for (Map.Entry<TimeOfDay, ArrayList<TrainingSession>> trainings : entry.getValue().entrySet()) {
                 for (TrainingSession training : trainings.getValue()) {
                     Coach coach = training.getCoach();
-                    if(!unSortCoach.containsKey(coach)) {
+                    if (!unSortCoach.containsKey(coach)) {
                         unSortCoach.put(coach, 1);
                     } else {
                         int numTrainings = unSortCoach.get(coach) + 1;
@@ -53,7 +53,7 @@ public class Timetable {
                 }
             }
         }
-        List <Map.Entry<Coach, Integer>> sortCoach = new ArrayList<>(unSortCoach.entrySet());
+        List<Map.Entry<Coach, Integer>> sortCoach = new ArrayList<>(unSortCoach.entrySet());
         sortCoach.sort(new Comparator<Map.Entry<Coach, Integer>>() {
             @Override
             public int compare(Map.Entry<Coach, Integer> o1, Map.Entry<Coach, Integer> o2) {
