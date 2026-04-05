@@ -57,7 +57,11 @@ public class Timetable {
         sortCoach.sort(new Comparator<Map.Entry<Coach, Integer>>() {
             @Override
             public int compare(Map.Entry<Coach, Integer> o1, Map.Entry<Coach, Integer> o2) {
-                return o1.getValue().compareTo(o2.getValue());
+                int result = o1.getValue().compareTo(o2.getValue());
+                if (result == 0) {
+                    result = o1.getKey().getSurname().compareTo(o2.getKey().getSurname());
+                }
+                return result;
             }
         });
         Collections.reverse(sortCoach);

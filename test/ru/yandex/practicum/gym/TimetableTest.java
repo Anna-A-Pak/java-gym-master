@@ -184,5 +184,4 @@ public class TimetableTest {
         Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getValue());
         Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getKey());
     }
-
 }
