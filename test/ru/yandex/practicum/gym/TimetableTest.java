@@ -82,9 +82,24 @@ public class TimetableTest {
     }
 
     @Test
-    void shouldBeNullTestGetTrainingSessionsForDayMultipleSessions() {
+    void shouldBeNullTestGetTrainingSessionsForDay() {
         Timetable timetable = new Timetable();
         Assertions.assertNull(timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY));
+    }
+
+    @Test
+    void shouldBeEmptyListTestGetTrainingSessionsForDayAndTime() {
+        Timetable timetable = new Timetable();
+        Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
+        Group groupAdult = new Group("Акробатика для взрослых", Age.ADULT, 90);
+        TimeOfDay timeOfDay14 = new TimeOfDay(14, 0);
+        TrainingSession singleTrainingSession = new TrainingSession(groupAdult, coach,
+                DayOfWeek.MONDAY, new TimeOfDay(13, 0));
+
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDayAndTime(DayOfWeek.SUNDAY,
+                timeOfDay14).size());
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDayAndTime(DayOfWeek.MONDAY,
+                timeOfDay14).size());
     }
 
     @Test

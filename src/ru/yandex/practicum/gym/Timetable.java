@@ -23,10 +23,10 @@ public class Timetable {
 
     public ArrayList<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
         //как реализовать, тоже непонятно, но сложность должна быть О(1)
-        if (!timetable.isEmpty()) {
+        if (timetable.containsKey(dayOfWeek) && timetable.get(dayOfWeek).containsKey(timeOfDay)) {
             return timetable.get(dayOfWeek).get(timeOfDay);
         } else {
-            return null;
+            return new ArrayList<>();
         }
     }
 
