@@ -134,10 +134,10 @@ public class TimetableTest {
 
         timetable.addNewTrainingSession(mondayChildTrainingSession);
 
-        Assertions.assertEquals(2, timetable.getCountByCoaches().getFirst().getValue());
-        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getFirst().getKey());
-        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getValue());
-        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getKey());
+        Assertions.assertEquals(2, timetable.getCountByCoaches().getFirst().getCount());
+        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getFirst().getCoach());
+        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getCount());
+        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getCoach());
     }
 
     @Test
@@ -157,10 +157,10 @@ public class TimetableTest {
 
         timetable.addNewTrainingSession(thursdayAdultTrainingSession);
 
-        Assertions.assertEquals(1, timetable.getCountByCoaches().getFirst().getValue());
-        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getFirst().getKey());
-        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getValue());
-        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getKey());
+        Assertions.assertEquals(1, timetable.getCountByCoaches().getFirst().getCount());
+        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getFirst().getCoach());
+        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getCount());
+        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getCoach());
     }
 
     @Test
@@ -179,9 +179,9 @@ public class TimetableTest {
         timetable.addNewTrainingSession(thursdayAdultTrainingSession);
         timetable.addNewTrainingSession(mondayAdultTrainingSession);
 
-        Assertions.assertEquals(1, timetable.getCountByCoaches().getFirst().getValue());
-        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getFirst().getKey());
-        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getValue());
-        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getKey());
+        Assertions.assertEquals(1, timetable.getCountByCoaches().getFirst().getCount());
+        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getFirst().getCoach());
+        Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getCount());
+        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getCoach());
     }
 }
