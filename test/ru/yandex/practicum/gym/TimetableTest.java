@@ -78,7 +78,8 @@ public class TimetableTest {
         TimeOfDay timeOfDay14 = new TimeOfDay(14, 0);
         Assertions.assertEquals(1, timetable.getTrainingSessionsForDayAndTime(DayOfWeek.MONDAY,
                 timeOfDay13).size());
-        Assertions.assertNull(timetable.getTrainingSessionsForDayAndTime(DayOfWeek.MONDAY, timeOfDay14));
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDayAndTime(DayOfWeek.MONDAY,
+                timeOfDay14).size());
     }
 
     @Test
