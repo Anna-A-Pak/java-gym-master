@@ -121,7 +121,7 @@ public class TimetableTest {
 
         TrainingSession thursdayAdultTrainingSession = new TrainingSession(groupAdult, coach1,
                 DayOfWeek.THURSDAY, new TimeOfDay(20, 0));
-        TrainingSession mondayAdultTrainingSession = new TrainingSession(groupAdult, coach2,
+        TrainingSession mondayAdultTrainingSession = new TrainingSession(groupAdult, coach1,
                 DayOfWeek.MONDAY, new TimeOfDay(20, 0));
 
         timetable.addNewTrainingSession(thursdayAdultTrainingSession);
@@ -135,9 +135,9 @@ public class TimetableTest {
         timetable.addNewTrainingSession(mondayChildTrainingSession);
 
         Assertions.assertEquals(2, timetable.getCountByCoaches().getFirst().getCount());
-        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getFirst().getCoach());
+        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getFirst().getCoach());
         Assertions.assertEquals(1, timetable.getCountByCoaches().getLast().getCount());
-        Assertions.assertEquals(coach1, timetable.getCountByCoaches().getLast().getCoach());
+        Assertions.assertEquals(coach2, timetable.getCountByCoaches().getLast().getCoach());
     }
 
     @Test

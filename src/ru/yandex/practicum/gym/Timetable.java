@@ -49,6 +49,7 @@ public class Timetable {
         for (Map.Entry<Coach, Integer> entry : unSortCoach.entrySet()) {
             counterForCoaches.add(new CounterForCoach(entry.getKey(), entry.getValue()));
         }
+        Collections.sort(counterForCoaches);
         Collections.reverse(counterForCoaches);
 
         return counterForCoaches;
